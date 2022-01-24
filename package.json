@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "api-alunos",
   "version": "1.0.0",
   "description": "API de alunos usando Node.js e Express",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/moutim/API-NodeJS-Exercicio/issues"
   },
-  "homepage": "https://github.com/moutim/API-NodeJS-Exercicio#readme"
+  "homepage": "https://github.com/moutim/API-NodeJS-Exercicio#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
