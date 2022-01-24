@@ -13,8 +13,8 @@ app.get('/alunos/:id', (req, res) => res.send('Dados de UM aluno'))
 app.post('/alunos', (req, res) => res.send('Inserir novos alunos'));
 
 // Rotas com Put - para atualizar todos os dados de UM aluno
-// app.put('/alunos/:id', (req, res) => res.send('Atualizar dados UM aluno'));
-// Podemos usar somente o patch porque ela atualizar somente UM aluno ou varios alunos
+    // app.put('/alunos/:id', (req, res) => res.send('Atualizar dados UM aluno'));
+    // Podemos usar somente o patch porque ela atualizar somente UM aluno ou varios alunos
 
 // Rotas com Patch - para atualizar todos/alguns dados de UM aluno
 app.patch('/alunos/:id', (req, res) => res.send('Atualizar dados todos/alguns alunos'));
