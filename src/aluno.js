@@ -1,4 +1,4 @@
-import conexao from "./banco";
+import conexao from "./banco.js";
 
 /* Funcoes para o CRUD */
 
@@ -16,4 +16,15 @@ function ler(res){
     }); 
 }
 
-export { ler };
+function inserir(aluno, res){
+    const sql = `INSERT INTO alunos SET ?`
+    conexao.query(sql, aluno, (erro) => {
+        if(erro){
+            res.status(400).json(erro.code);
+        } else {
+            res.status(201).json({'status' : 'Aluno inserido!'})
+        }
+    });
+}
+
+export { ler, inserir };
