@@ -1,5 +1,5 @@
 import express from "express";
-import { ler, inserir, lerUm } from './src/aluno.js';
+import { ler, inserir, lerUm, atualizar } from './src/aluno.js';
 
 const app = express();
 const porta = 3000;
@@ -31,7 +31,11 @@ app.post('/alunos', (req, res) => {
     // Podemos usar somente o patch porque ela atualizar somente UM aluno ou varios alunos
 
 // Rotas com Patch - para atualizar todos/alguns dados de UM aluno
-app.patch('/alunos/:id', (req, res) => res.send('Atualizar dados todos/alguns alunos'));
+app.patch('/alunos/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const aluno = req.body;
+    atualizar(id, aluno, res);
+});
 
 // Rotas com Delete - para excluir alunos
 app.delete('/alunos/:id', (req, res) => res.send('Apagar alunos'));
