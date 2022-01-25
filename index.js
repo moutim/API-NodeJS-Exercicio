@@ -1,5 +1,5 @@
 import express from "express";
-import { ler, inserir } from './src/aluno.js';
+import { ler, inserir, lerUm } from './src/aluno.js';
 
 const app = express();
 const porta = 3000;
@@ -11,11 +11,13 @@ app.use(express.urlencoded({extended:true}));
 
 // Rotas com GET
 app.get('/', (req, res) => res.send('API de alunos com Node.js, Express e MySQL'));
-
 // Le dados de todos os alunos
 app.get('/alunos', (req, res) => ler(res));
-
-app.get('/alunos/:id', (req, res) => res.send('Dados de UM aluno'))
+// Le dados de UM aluno
+app.get('/alunos/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    lerUm(id, res)
+})
 
 
 // Rotas com POST: para inserir novos alunos
