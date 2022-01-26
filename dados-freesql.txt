@@ -1,0 +1,5 @@
+Host: sql10.freesqldatabase.com
+Database name: sql10468161
+Database user: sql10468161
+Database password: S9tjWzz8qk
+Port number: 3306
