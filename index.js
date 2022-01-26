@@ -2,7 +2,8 @@ import express from "express";
 import { ler, inserir, lerUm, atualizar, excluir } from './src/aluno.js';
 
 const app = express();
-const porta = 3000;
+// Habilitando outras portas para rodar a aplicacao
+const porta = process.env.PORT || 3000;
 // Habilitando express para receber json
 app.use(express.json());
 // Habilitando express para funcionar com dados de inputs
@@ -46,5 +47,5 @@ app.delete('/alunos/:id', (req, res) => {
 
 
 app.listen(porta, () => {
-    console.log('Servidor rodando');
+    console.log(`Servidor rodando na porta ${porta}`);
 });
