@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended:true}));
 
 
 // Rotas com GET
-app.get('/', (req, res) => res.send('API de alunos com Node.js, Express e MySQL'));
+app.get('/', (req, res) => res.redirect('https://documenter.getpostman.com/view/19292971/UVeAtoGs'));
 // Le dados de todos os alunos
 app.get('/alunos', (req, res) => ler(res));
 // Le dados de UM aluno
